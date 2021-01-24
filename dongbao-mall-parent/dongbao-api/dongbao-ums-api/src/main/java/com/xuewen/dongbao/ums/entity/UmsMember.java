@@ -9,6 +9,7 @@ import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * <p>
@@ -55,18 +56,18 @@ public class UmsMember implements Serializable {
      * 创建时间
      */
       @TableField(fill = FieldFill.INSERT)
-    private LocalDateTime gmtCreate;
+    private Date gmtCreate;
 
     /**
      * 更新时间
      */
       @TableField(fill = FieldFill.INSERT_UPDATE)
-    private LocalDateTime gmtModified;
+    private Date gmtModified;
 
     /**
      * 最后登录时间
      */
-    private LocalDateTime loginTime;
+    private Date loginTime;
 
     /**
      * 帐号启用状态：0->禁用；1->启用

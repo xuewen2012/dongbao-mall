@@ -2,6 +2,7 @@ package com.xuewen.dongbao.ums.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
+import org.springframework.stereotype.Component;
 
 import javax.sound.midi.MetaEventListener;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Date;
  * @author: hexuewen
  * @date: 2021/1/24
  */
+@Component
 public class MyHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
