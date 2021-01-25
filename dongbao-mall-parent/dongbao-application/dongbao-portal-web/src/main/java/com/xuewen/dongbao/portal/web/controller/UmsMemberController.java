@@ -1,12 +1,12 @@
 package com.xuewen.dongbao.portal.web.controller;
 
 
+import com.xuewen.dongbao.common.base.result.ResultWrapper;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.xuewen.dongbao.ums.service.UmsMemberService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.DigestUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -30,9 +30,11 @@ public class UmsMemberController {
     }
 
     @GetMapping("/register")
-    public String register(@RequestBody UmsMemberRegisterParamDTO umsMemberRegisterParamDTO) {
+    public ResultWrapper register(@RequestBody @Validated UmsMemberRegisterParamDTO umsMemberRegisterParamDTO) {
+        int a = 0;
+        a = 1/a;
         umsMemberService.register(umsMemberRegisterParamDTO);
-        return "success";
+        return ResultWrapper.getSuccessBuilder().data(null).build();
     }
 
     @GetMapping("/login")
