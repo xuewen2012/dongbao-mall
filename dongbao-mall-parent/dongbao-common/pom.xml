@@ -19,6 +19,7 @@
 
     <modules>
         <module>dongbao-common-base</module>
+        <module>dongbao-common-util</module>
     </modules>
 
     <dependencies>

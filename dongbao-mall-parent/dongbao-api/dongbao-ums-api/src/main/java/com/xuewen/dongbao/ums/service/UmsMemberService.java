@@ -1,6 +1,7 @@
 package com.xuewen.dongbao.ums.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xuewen.dongbao.common.base.result.ResultWrapper;
 import com.xuewen.dongbao.ums.entity.UmsMember;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
@@ -18,12 +19,19 @@ public interface UmsMemberService extends IService<UmsMember> {
     /**
      * 注册demo
      */
-    void register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO);
+    ResultWrapper register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO);
 
     /**
      * 登录
      * @param umsMemberLoginParamDTO
      * @return
      */
-    String login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
+    ResultWrapper login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
+
+    /**
+     * 修改
+     * @param umsMember
+     * @return
+     */
+    ResultWrapper edit(UmsMember umsMember);
 }

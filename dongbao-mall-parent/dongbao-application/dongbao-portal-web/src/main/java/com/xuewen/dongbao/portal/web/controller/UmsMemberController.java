@@ -1,7 +1,9 @@
 package com.xuewen.dongbao.portal.web.controller;
 
 
+import com.xuewen.dongbao.common.base.annotation.TokenCheck;
 import com.xuewen.dongbao.common.base.result.ResultWrapper;
+import com.xuewen.dongbao.ums.entity.UmsMember;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.xuewen.dongbao.ums.service.UmsMemberService;
@@ -31,15 +33,18 @@ public class UmsMemberController {
 
     @GetMapping("/register")
     public ResultWrapper register(@RequestBody @Validated UmsMemberRegisterParamDTO umsMemberRegisterParamDTO) {
-        int a = 0;
-        a = 1/a;
-        umsMemberService.register(umsMemberRegisterParamDTO);
-        return ResultWrapper.getSuccessBuilder().data(null).build();
+        return umsMemberService.register(umsMemberRegisterParamDTO);
     }
 
     @GetMapping("/login")
-    public String login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO) {
+    public ResultWrapper login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO) {
         return umsMemberService.login(umsMemberLoginParamDTO);
+    }
+
+    @PostMapping("/edit")
+    @TokenCheck
+    public ResultWrapper edit(@RequestBody UmsMember umsMember) {
+        return umsMemberService.edit(umsMember);
     }
 
 }
