@@ -1,14 +1,14 @@
-package com.xuewen.dongbaoums.ums.service;
+package com.xuewen.dongbao.ums.service;
 
 
-import com.xuewen.dongbaoums.ums.entity.UmsMember;
-import com.xuewen.dongbaoums.ums.mapper.UmsMemberMapper;
+import com.xuewen.dongbao.ums.entity.UmsMember;
+import com.xuewen.dongbao.ums.mapper.UmsMemberMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service
-public class UmsMemberServiceImpl implements UmsMemberService{
+public class UmsMemberServiceImpl implements UmsMemberService {
 
     @Resource
     private UmsMemberMapper umsMemberMapper;

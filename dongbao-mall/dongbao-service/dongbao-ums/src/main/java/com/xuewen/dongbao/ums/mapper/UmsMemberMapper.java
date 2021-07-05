@@ -1,7 +1,6 @@
-package com.xuewen.dongbaoums.ums.mapper;
+package com.xuewen.dongbao.ums.mapper;
 
-import com.xuewen.dongbaoums.ums.entity.UmsMember;
-import org.apache.ibatis.annotations.Mapper;
+import com.xuewen.dongbao.ums.entity.UmsMember;
 import org.springframework.stereotype.Repository;
 
 @Repository

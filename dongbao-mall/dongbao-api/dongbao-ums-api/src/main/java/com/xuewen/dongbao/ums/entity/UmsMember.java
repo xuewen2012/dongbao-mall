@@ -1,6 +1,8 @@
-package com.xuewen.dongbaoums.ums.entity;
+package com.xuewen.dongbao.ums.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
@@ -41,12 +43,14 @@ public class UmsMember {
     /**
      * 创建时间
      */
-    private Date createTime;
+    @TableField(fill = FieldFill.INSERT)
+    private Date gmtCreate;
 
     /**
      * 更新时间
      */
-    private Date updateTime;
+    @TableField(fill = FieldFill.INSERT_UPDATE)
+    private Date gmtModified;
 
     /**
      * 最后登录时间

@@ -1,6 +1,6 @@
-package com.xuewen.dongbaoums.ums.service;
+package com.xuewen.dongbao.ums.service;
 
-import com.xuewen.dongbaoums.ums.entity.UmsMember;
+import com.xuewen.dongbao.ums.entity.UmsMember;
 
 public interface UmsMemberService{
 
