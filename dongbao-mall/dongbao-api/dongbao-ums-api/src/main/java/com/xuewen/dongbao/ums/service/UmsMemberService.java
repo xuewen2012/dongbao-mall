@@ -1,6 +1,8 @@
 package com.xuewen.dongbao.ums.service;
 
 import com.xuewen.dongbao.ums.entity.UmsMember;
+import com.xuewen.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
+import com.xuewen.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 
 public interface UmsMemberService{
 
@@ -17,4 +19,7 @@ public interface UmsMemberService{
 
     int updateByPrimaryKey(UmsMember record);
 
+    void register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO);
+
+    String login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
 }
