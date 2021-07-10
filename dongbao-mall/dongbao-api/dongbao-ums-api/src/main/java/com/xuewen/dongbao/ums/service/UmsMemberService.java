@@ -1,5 +1,6 @@
 package com.xuewen.dongbao.ums.service;
 
+import com.xuewen.dongbao.common.base.result.ResultWrapper;
 import com.xuewen.dongbao.ums.entity.UmsMember;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
@@ -21,5 +22,5 @@ public interface UmsMemberService{
 
     void register(UmsMemberRegisterParamDTO umsMemberRegisterParamDTO);
 
-    String login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
+    ResultWrapper login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
 }

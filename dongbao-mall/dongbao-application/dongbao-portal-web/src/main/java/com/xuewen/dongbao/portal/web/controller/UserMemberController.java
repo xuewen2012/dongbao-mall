@@ -1,12 +1,16 @@
 package com.xuewen.dongbao.portal.web.controller;
 
+import com.xuewen.dongbao.common.base.result.ResultWrapper;
 import com.xuewen.dongbao.ums.entity.UmsMember;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
 import com.xuewen.dongbao.ums.service.UmsMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @author 马士兵教育:chaopengfei
@@ -25,13 +29,15 @@ public class UserMemberController {
 	}
 
 	@PostMapping("/register")
-	public String register(@RequestBody UmsMemberRegisterParamDTO umsMemberRegisterParamDTO) {
+	public ResultWrapper register(@RequestBody @Valid UmsMemberRegisterParamDTO umsMemberRegisterParamDTO) {
+
+		int a = 1/0;
 		umsMemberService.register(umsMemberRegisterParamDTO);
-		return "success";
+		return ResultWrapper.getSuccessBuilder().build();
 	}
 
 	@PostMapping("/login")
-	public String login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO) {
+	public ResultWrapper login(@RequestBody UmsMemberLoginParamDTO umsMemberLoginParamDTO) {
 		return umsMemberService.login(umsMemberLoginParamDTO);
 	}
 

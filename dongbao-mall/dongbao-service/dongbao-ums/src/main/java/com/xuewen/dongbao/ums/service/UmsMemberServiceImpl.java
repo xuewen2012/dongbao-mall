@@ -1,6 +1,7 @@
 package com.xuewen.dongbao.ums.service;
 
 
+import com.xuewen.dongbao.common.base.result.ResultWrapper;
 import com.xuewen.dongbao.ums.entity.UmsMember;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
@@ -67,19 +68,19 @@ public class UmsMemberServiceImpl implements UmsMemberService {
     }
 
     @Override
-    public String login(UmsMemberLoginParamDTO umsMemberLoginParamDTO) {
+    public ResultWrapper login(UmsMemberLoginParamDTO umsMemberLoginParamDTO) {
         List<UmsMember> umsMembers = umsMemberMapper.findByUsername(umsMemberLoginParamDTO.getUsername());
         if (!CollectionUtils.isEmpty(umsMembers)) {
             UmsMember umsMember = umsMembers.get(0);
             String password = umsMember.getPassword();
             boolean matches = passwordEncoder.matches(umsMemberLoginParamDTO.getPassword(), password);
             if(!matches) {
-                return "密码不正确";
+                return ResultWrapper.getFailBuilder().msg("密码不正确").build();
             }
         } else {
-           return "用户不存在";
+           return ResultWrapper.getFailBuilder().msg("用户不存在").build();
         }
         System.out.println("登录成功");
-        return "token";
+        return ResultWrapper.getSuccessBuilder().data("token").build();
     }
 }

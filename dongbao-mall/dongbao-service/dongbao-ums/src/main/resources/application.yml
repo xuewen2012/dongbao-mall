@@ -4,6 +4,6 @@ spring:
     url: jdbc:mysql://101.132.255.183:3306/dongbao_test
     username: root
     password: root
-mybatis:
-  mapper-locations:
-    classpath*:**/mapper/xml/*.xml
+mybatis-plus:
+  type-aliases-package: com.xuewen.dongbao.ums.entity
+  mapper-locations: com/xuewen/dongbao/ums/mapper/xml/**/*.xml
