@@ -2,6 +2,7 @@ package com.xuewen.dongbao.ums.service;
 
 
 import com.xuewen.dongbao.common.base.result.ResultWrapper;
+import com.xuewen.dongbao.common.util.JwtUtil;
 import com.xuewen.dongbao.ums.entity.UmsMember;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberLoginParamDTO;
 import com.xuewen.dongbao.ums.entity.dto.UmsMemberRegisterParamDTO;
@@ -81,6 +82,7 @@ public class UmsMemberServiceImpl implements UmsMemberService {
            return ResultWrapper.getFailBuilder().msg("用户不存在").build();
         }
         System.out.println("登录成功");
-        return ResultWrapper.getSuccessBuilder().data("token").build();
+        String token = JwtUtil.createToken(umsMembers.get(0).getUsername());
+        return ResultWrapper.getSuccessBuilder().data(token).build();
     }
 }

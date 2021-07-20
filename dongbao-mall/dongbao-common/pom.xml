@@ -9,6 +9,10 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>dongbao-common-base</module>
+        <module>dongbao-common-util</module>
+    </modules>
 
     <groupId>com.xuewen</groupId>
     <artifactId>dongbao-common</artifactId>

@@ -2,6 +2,7 @@ package com.xuewen.dongbao.ums.entity.dto;
 
 import lombok.Data;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -22,6 +23,7 @@ public class UmsMemberRegisterParamDTO {
     /**
      * 邮箱
      */
+    @Email
     private String email;
 
     /**
