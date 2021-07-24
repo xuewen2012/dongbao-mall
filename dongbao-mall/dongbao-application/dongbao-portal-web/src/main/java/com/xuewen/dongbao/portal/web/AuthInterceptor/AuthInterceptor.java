@@ -17,9 +17,9 @@ public class AuthInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("拦截器进入");
         String token = request.getHeader("token");
-        if (StringUtils.isBlank(token)) {
+        /*if (StringUtils.isBlank(token)) {
             throw new TokenException("token 为空");
-        }
+        }*/
         if(handler instanceof HandlerMethod) {
             HandlerMethod handlerMethod = (HandlerMethod)handler;
             Method method = handlerMethod.getMethod();
